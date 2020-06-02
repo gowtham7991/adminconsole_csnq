@@ -1,0 +1,25 @@
+{
+  "templatepage": {
+    "title": "Enter title here",
+    "navdetails": {
+      "URL": [
+        {
+          "_type": "home",
+          "_href": "home.html",
+          "__text": "Home"
+        },
+        {
+          "_type": "link",
+          "_href": "link1.html",
+          "__text": "link"
+        },
+        {
+          "_type": "footer",
+          "_href": "help.html",
+          "__text": "Help / Report Issue"
+        }
+      ]
+    },
+    "pagetitle": "REACT APP"
+  }
+}

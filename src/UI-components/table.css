@@ -1,0 +1,153 @@
+.tabledata {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tabledata th {
+  padding: 12px;
+  text-align: center;
+  background-color: #3dcd58;
+  color: white;
+  border-right: 3px solid white;
+}
+.tabledata .rowheader {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #3dcd58;
+  color: black;
+  background-color: white;
+  border-bottom: 2px solid black;
+}
+.tabledata td {
+  padding: 4px;
+  padding-left: 14px;
+  text-align: left;
+  border-top: 0px;
+  border: none;
+}
+
+.tabledata td#border {
+  padding: 4px;
+  padding-left: 14px;
+  text-align: left;
+  border-top: 0px;
+  border-bottom: 2px solid black;
+}
+
+.tabledata #show {
+  padding: 8px;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+}
+.tabledata #dont-show {
+  padding: 8px;
+  text-align: center;
+  border: none;
+  font-size: 0px;
+  word-wrap: break-word;
+}
+/*
+    .tabledata tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    */
+.tabledata tr:hover {
+  background-color: #ddd;
+}
+
+.tabledata #Not-started {
+  height: 15px;
+  width: 15px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+  border: 1px solid;
+}
+
+.tabledata #Major-issue {
+  height: 15px;
+  width: 15px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.tabledata #Backlog {
+  height: 15px;
+  width: 15px;
+  background-color: #ffc000;
+  border-radius: 50%;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+}
+.tabledata #Warning {
+  height: 15px;
+  width: 15px;
+  background-color: #ffc000;
+  border-radius: 50%;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+}
+.tabledata #Done {
+  height: 15px;
+  width: 15px;
+  background-color: #000000;
+  border-radius: 50%;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+}
+.tabledata #In-Progress {
+  height: 15px;
+  width: 15px;
+  background-color: #3dcd58;
+  border-radius: 50%;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 8px;
+}
+
+.tabledata #complete {
+  height: 15px;
+  width: 15px;
+  background-color: #3dcd58;
+  border-radius: 50%;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 8px;
+}
+
+.tabledata #incomplete {
+  height: 15px;
+  width: 15px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+}

@@ -1,0 +1,175 @@
+.risktable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.risktable td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid black;
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.risktable th {
+  padding: 8px;
+  text-align: center;
+  border: none;
+  padding-left: 10px;
+}
+
+.risktable #footer td {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+.risktable #index21,
+#index22,
+#index31,
+#index32 {
+  background-color: rgb(217, 226, 243);
+}
+
+.risktable #index23,
+#index24,
+#index33,
+#index34 {
+  background-color: rgb(251, 228, 213);
+}
+
+.risktable #index41,
+#index42,
+#index51,
+#index52 {
+  background-color: rgb(226, 239, 217);
+}
+
+.risktable #index43,
+#index44,
+#index53,
+#index54 {
+  background-color: rgb(255, 242, 204);
+}
+
+.risktable tfoot {
+  color: black;
+  padding: 4px;
+  text-align: left;
+  border: 1px solid black;
+  font-size: 14px;
+}
+
+.risktable #rowheader {
+  color: black;
+  padding: 4px;
+  text-align: left;
+  background-color: white;
+  border: 1px solid black;
+  font-size: 16px;
+}
+
+.risktable #rowheader p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: left;
+}
+
+.risktable #show {
+  padding: 8px;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+}
+.risktable #dont-show {
+  padding: 8px;
+  text-align: center;
+  border: none;
+  font-size: 0px;
+  word-wrap: break-word;
+}
+
+.risktable #not-started {
+  height: 15px;
+  width: 15px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+  border: 1px solid;
+}
+
+.risktable #major-issue {
+  height: 15px;
+  width: 15px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+}
+.risktable #backlog {
+  height: 15px;
+  width: 15px;
+  background-color: #ffc000;
+  border-radius: 50%;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+}
+.risktable #Warning {
+  height: 15px;
+  width: 15px;
+  background-color: #ffc000;
+  border-radius: 50%;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+}
+.risktable #done {
+  height: 15px;
+  width: 15px;
+  background-color: #000000;
+  border-radius: 50%;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+}
+.risktable #in-progress {
+  height: 15px;
+  width: 15px;
+  background-color: #3dcd58;
+  border-radius: 50%;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 8px;
+}
+
+.risktable .inner {
+  border: none;
+}
+
+.risktable input {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0px;
+  padding: 0px;
+}

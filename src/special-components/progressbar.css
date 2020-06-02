@@ -1,0 +1,70 @@
+.container {
+  width: 100%;
+}
+
+.progressbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+.progressbar li {
+  list-style: none;
+  display: inline-block;
+  width: 30px;
+
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+.progressbar li:before {
+  content: "";
+
+  width: 15px;
+  height: 15px;
+  line-height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  background-color: #fff;
+}
+.progressbar li:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: gray;
+  top: 7px;
+  left: -50%;
+  z-index: -1;
+}
+.progressbar li:first-child:after {
+  content: none;
+}
+.progressbar li.in-progress {
+  color: green;
+}
+.progressbar li.not-started:before {
+  border-color: black;
+}
+
+.progressbar li.major-issue:before {
+  border-color: red;
+  background-color: red;
+}
+
+.progressbar li.done:before {
+  border-color: black;
+  background-color: black;
+}
+
+.progressbar li.in-progress:before {
+  background-color: #3dcd58;
+  border-color: #3dcd58;
+}
+.progressbar li.Warning:before {
+  border-color: #ffc000;
+  background-color: #ffc000;
+}

@@ -1,0 +1,162 @@
+.widgets {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.widgets .widget {
+  width: 50%;
+  padding: 5px 110px;
+}
+
+.widgets .dropzone {
+  float: left;
+  width: 100%;
+  margin: 40px;
+}
+
+.widgets .button {
+  float: left;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+label {
+  margin: 8px 0px;
+  margin-left: 8px;
+  display: block;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+legend {
+  font-size: 18px;
+}
+select {
+  padding: 12px 20px;
+  margin: 8px 0px;
+  margin-left: 5px;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 70%;
+  height: 55px;
+}
+
+input[type="text"] {
+  padding: 12px 20px;
+  margin: 8px 0px;
+  margin-left: 5px;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 70%;
+  height: 55px;
+}
+
+label#field {
+  margin: 8px 0px;
+  margin-left: 8px;
+  display: inline-block;
+}
+input[type="text"]#field {
+  padding: 12px 20px;
+  margin: 8px 0px;
+  margin-left: 5px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+select:hover {
+  box-shadow: 0px 0px 7px #ccc;
+}
+input[type="text"].error {
+  border: 1px solid red;
+}
+
+.input-feedback {
+  color: red;
+  margin-top: -5px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  margin-left: 6px;
+}
+
+input:hover {
+  box-shadow: 0px 0px 7px #ccc;
+}
+
+input[type="number"] {
+  padding: 12px 20px;
+  margin: 8px 0px;
+  margin-left: 5px;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 70%;
+  height: 55px;
+}
+input[type="checkbox"] {
+  padding: 12px 20px;
+  margin: 8px 0px;
+  margin-left: 5px;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea:hover {
+  box-shadow: 0px 0px 7px #ccc;
+}
+
+textarea {
+  padding: 12px 30px;
+  margin: 8px 0px;
+  margin-left: 5px;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 70%;
+  height: 150px;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+#Submit {
+  padding: 10px;
+  width: 150px;
+  margin-bottom: 20px;
+  background-color: #4caf50;
+  font-size: 16px;
+  border-radius: 24px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#Cancel {
+  padding: 10px;
+  margin: 18px 18px;
+  background-color: gray;
+  margin-left: 450px;
+  border-radius: 24px;
+  border: none;
+  width: 20%;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+}

@@ -1,0 +1,127 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main0 {
+  margin-left: 60px;
+  padding-right: 0px;
+  position: relative;
+  margin-right: 10px;
+  width: auto;
+}
+
+.main1 {
+  margin-left: 60px;
+  padding-right: 0px;
+  position: relative;
+  margin-right: 10px;
+  opacity: 0.5;
+  background-color: rgb(211, 211, 211);
+  width: auto;
+}
+
+.layout {
+  position: absolute;
+  width: 100%;
+  right: 0px;
+  left: 0px;
+}
+.activearea {
+  position: absolute;
+  margin-top: 79px;
+  left: 0px;
+  width: 100%;
+  display: flex;
+  align-items: space-around;
+}
+.data {
+  width: 100%;
+}
+
+.data p {
+  font-size: 14px;
+}
+.data #buttons {
+  display: flex;
+  justify-content: center;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+.data #risksubmit {
+  display: flex;
+  justify-content: center;
+}
+.timeline {
+  width: 20%;
+}
+
+.denied {
+  width: 100%;
+  background-color: #f2f2f2;
+  height: calc(100vh);
+  /* background-image: url(""); */
+  /* background-repeat: no-repeat; */
+  /* background-attachment: fixed; */
+  /* background-position: center; */
+}
+
+.denied .content {
+  text-align: center;
+  margin-top: 18vh;
+  color: #343434;
+  z-index: 55;
+}
+
+.denied .content h1 {
+  font-size: 140px;
+  font-weight: 800;
+  letter-spacing: 10px;
+}
+
+.denied .content h3 {
+  font-size: 80px;
+  font-weight: 400;
+  margin: 0px;
+  padding: 0px;
+}
+.denied .content h5 {
+  font-size: 20px;
+}
+.loading-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #f2f2f2;
+  height: calc(100vh - 80px);
+  position: relative;
+}
+.loading-container .loader {
+  border: 12px solid lightgray; /* Light grey */
+  border-top: 12px solid #3dcd58; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin-top: 30vh;
+  position: absolute;
+}
+
+.loading-container .load-text {
+  position: absolute;
+  margin-top: calc(30vh + 51px);
+  font-size: 18px;
+  color: black;
+}
+
+.success,
+.failed {
+  text-align: center;
+  margin-top: 50px;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

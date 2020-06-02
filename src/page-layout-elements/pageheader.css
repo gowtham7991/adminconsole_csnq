@@ -1,0 +1,46 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.pageheader {
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.pageheader h4 {
+  margin-top: 0px;
+  margin-left: 0px;
+  left: 0;
+  position: absolute;
+  padding: 0px;
+}
+.pageheader a {
+  margin-top: 0px;
+  margin-right: 0px;
+  right: 0px;
+  position: absolute;
+  padding: 0px;
+}
+
+#title {
+  background-color: #3dcd58;
+  color: white;
+  font-size: 30px;
+  height: 38px;
+  position: absolute;
+  top: 25px;
+  width: 100%;
+  text-align: center;
+}
+#line-separator {
+  top: 63px;
+  border: 5px solid rgb(131, 223, 148);
+  width: 100%;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
