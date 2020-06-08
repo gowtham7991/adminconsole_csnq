@@ -8,7 +8,7 @@ class Alert extends Component {
       isHidden: this.props.isHidden,
     };
   }
-
+  //handles any update in the props which are made in the parent
   componentWillReceiveProps(nextProps) {
     this.setState({ isHidden: nextProps.isHidden });
   }

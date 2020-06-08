@@ -3,6 +3,7 @@ import Pageheader from "./page-layout-elements/pageheader"; // page header modul
 import * as Data from "./DATA.json"; // JSON data for the UI pages
 import Navbar from "./page-layout-elements/navbar"; //module for the side navigation bar
 import "./page-layout-elements/pagelayout.css"; //css file for the page layout
+import VerticalTimeline from "./special-components/verticaltimeline";
 // import "bootstrap/dist/css/bootstrap.css";  //install bootstrap and uncomment to start using bootstrap
 
 //import the required modules from the directory
@@ -14,12 +15,18 @@ class PageTemplate extends Component {
   constructor(props) {
     super(props);
     this.toggleclass = this.toggleclass.bind(this);
+
     this.state = {
       title: Data.templatepage.title, //set the title of the section
       active: false, //states the status of the toggle for the navigation bar
       navdetails: Data.templatepage.navdetails.URL, //set the details for the navigation bar from the JSON
       pagetitle: Data.templatepage.pagetitle, //set the page title
-
+      timelineData: [
+        { title: "step1", date: "01-01-1998", status: "completed" },
+        { title: "step2", date: "02-01-1998", status: "completed" },
+        { title: "step3", date: "03-01-1998", status: "not-started" },
+        { title: "step4", date: "04-01-1998", status: "not-started" },
+      ],
       //set the state if any additional component is imported and pass the data to the child component
     };
   }
@@ -28,6 +35,32 @@ class PageTemplate extends Component {
   toggleclass() {
     let currentState = this.state.active;
     this.setState({ active: !currentState });
+  }
+
+  componentWillMount() {
+    //if the website need details from LEAP extract the details from the URL params and assign it to state variables here
+    //function which extracts the url params based on the key
+    function getUrlVars() {
+      var vars = {};
+      var parts = window.location.href.replace(
+        /[?&]+([^=&]+)=([^&]*)/gi,
+        function (m, key, value) {
+          vars[key] = value;
+        }
+      );
+      return vars;
+    }
+
+    //make the api call to get the details about the logged in user - Authorization
+
+    /* var AuthorizationURL = "";
+    fetch(AuthorizationURL, {
+      method: "",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: "",
+    }); */
   }
 
   render() {
@@ -45,11 +78,19 @@ class PageTemplate extends Component {
               pagetitle={this.state.pagetitle}
             />
           </div>
-
           <div className="activearea">
             <div className="data">
-              <h1>Hello from React</h1>
               {/* your code goes here..*/}
+              <h1>Hello from React</h1>
+              <div
+                style={{
+                  width: "200px",
+                  backgroundColor: "#cdcdcd",
+                  borderRadius: "4px",
+                }}
+              >
+                <VerticalTimeline timelineData={this.state.timelineData} />
+              </div>
             </div>
           </div>
         </div>

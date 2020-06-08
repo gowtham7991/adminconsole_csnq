@@ -13,6 +13,7 @@ class Widgets extends Component {
     };
   }
 
+  //handles any update in the props which are made in the parent
   componentWillReceiveProps(nextProps) {
     this.setState({
       widgetdata: nextProps.widgetdata,

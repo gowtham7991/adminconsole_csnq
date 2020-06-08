@@ -10,6 +10,8 @@ class RiskTable extends Component {
       tabledata: this.props.tabledata,
     };
   }
+
+  //handles any update in the props which are made in the parent
   componentWillReceiveProps(nextprops) {
     this.setState({ tabledata: nextprops.tabledata });
   }

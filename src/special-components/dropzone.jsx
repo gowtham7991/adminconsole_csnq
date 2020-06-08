@@ -13,6 +13,7 @@ class DrapnDrop extends Component {
     };
   }
 
+  //handles any update in the props which are made in the parent --- assign the state variables accordingly
   componentWillReceiveProps(nextProps) {
     this.setState({ accepted_file_extns: nextProps.accepted_file_extns });
     var accepted_str = "";

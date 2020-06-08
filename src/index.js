@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App-template";
 import * as serviceWorker from "./serviceWorker";
+import VerticalTimeline from "./special-components/verticaltimeline";
 
 ReactDOM.render(
   <React.StrictMode>

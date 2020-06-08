@@ -1,6 +1,6 @@
 {
   "templatepage": {
-    "title": "Enter title here",
+    "title": "Test Title",
     "navdetails": {
       "URL": [
         {
@@ -20,6 +20,7 @@
         }
       ]
     },
+    "timelinedata": [],
     "pagetitle": "REACT APP"
   }
 }
