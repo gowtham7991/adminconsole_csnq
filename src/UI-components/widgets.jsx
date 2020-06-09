@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from "react";
-import "./widget.css";
-// import { Formik } from "formik"; //instal formik and yup for form handling and validation -- uncomment when installed
-// import * as Yup from "yup";
+import "./widgets.css";
+import { Formik } from "formik"; //instal formik and yup for form handling and validation -- uncomment when installed
+import * as Yup from "yup";
 // import "bootstrap/dist/css/bootstrap.css"; //install bootstrap and then uncomment to make use of the library
 
 class Widgets extends Component {
   constructor(props) {
     super(props);
-    this.refreshPage = this.refreshPage.bind(this);
+
     this.state = {
       widgetdata: this.props.widgetdata,
     };
@@ -37,8 +37,8 @@ class Widgets extends Component {
             (option, index) => (keys[`${option.name}`] = false)
           )
         : widget.category == "select"
-        ? (keys[`${widget.name}`] = keys[`${field.name}`] = options[0])
-        : widget.name == "fieldset"
+        ? (keys[`${widget.name}`] = widget.options[0])
+        : widget.category == "fieldset"
         ? widget.fields.map((field, index) => (keys[`${field.name}`] = ""))
         : (keys[`${widget.name}`] = "")
     );
@@ -48,6 +48,7 @@ class Widgets extends Component {
 
     //validation schema for the form fields
     let formValidationSchema = Yup.object().shape({
+      // enter fields required for validation
       /* Name: Yup.string().required("please enter the required info!"),
       Designation: Yup.string(),
       "SESA-ID": Yup.string().required("please enter the required info!"), */
@@ -58,14 +59,13 @@ class Widgets extends Component {
       <div>
         <Formik
           initialValues={keys}
-          validationSchema={formValidationSchema}
           onSubmit={(values, { setSubmitting, resetForm }) => {
             setSubmitting(true);
             setTimeout(() => {
-              console.log("handles on submit function");
+              //write your on submit func here
+              console.log("values", values);
 
-              // perform onsubmit function here
-              resetForm();
+              setSubmitting(false);
             }, 500);
           }}
         >
@@ -79,7 +79,7 @@ class Widgets extends Component {
             touched,
           }) => (
             <form onSubmit={handleSubmit}>
-              <div class="widgets">
+              <div className="widgets">
                 {this.state.widgetdata.map((widget, index) =>
                   widget.category == "input" ? (
                     <div className="widget">
@@ -98,7 +98,8 @@ class Widgets extends Component {
                           touched[`${widget.name}`] &&
                           "error"
                         }
-                        min="0"
+                        min={this.state.today}
+                        max={this.state.maxDate}
                       />
                       {errors[`${widget.name}`] &&
                         touched[`${widget.name}`] && (
@@ -121,7 +122,7 @@ class Widgets extends Component {
                       </select>
                     </div>
                   ) : widget.category == "textarea" ? (
-                    <div className="widget">
+                    <div className="textarea">
                       <label for={widget.name}>{widget.label}</label>
                       <textarea
                         rows={widget.rows}
@@ -134,22 +135,11 @@ class Widgets extends Component {
                       ></textarea>
                     </div>
                   ) : widget.category == "dropzone" ? (
-                    <div className="dropzone">
-                      <DragnDrop
-                        onDrop={this.props.onDrop}
-                        files={this.props.files}
-                        removeAll={this.props.removeAll}
-                        removeFile={this.props.removeFile}
-                        accepted_file_extns={[
-                          values["Q1-option1"],
-                          values["Q1-option2"],
-                          values["Q1-option3"],
-                          values["Q1-option4"],
-                        ]}
-                      />
+                    <div>
+                      <h1>hii</h1>
                     </div>
                   ) : widget.category == "checkbox" ? (
-                    <div className="widget">
+                    <div className="checkbox">
                       <legend>{widget.legend}</legend>
                       <input
                         type={widget.type}
@@ -214,30 +204,61 @@ class Widgets extends Component {
                   ) : widget.category == "fieldset" ? (
                     <div className="widget">
                       <label>{widget.label}</label>
-                      {widget.fields.map((field, index) => (
+                      <div
+                        className="fieldset "
+                        style={{
+                          border: "1px solid #CCC",
+                          borderRadius: "4px",
+                          padding: "8px",
+                        }}
+                      >
+                        {widget.fields.map((field, index) => (
+                          <div>
+                            <label htmlFor={field.name} id="field">
+                              {field.label}
+                            </label>
+                            <input
+                              type={field.type}
+                              id={"field"}
+                              name={field.name}
+                              value={values[`${field.name}`]}
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              placeholder={widget.placeholder}
+                              className={
+                                errors[`${field.name}`] &&
+                                touched[`${field.name}`] &&
+                                "error"
+                              }
+                              min="0"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ) : widget.category == "radio" ? (
+                    <div className="widget">
+                      <label>{widget.label}</label>
+                      {widget.options.map((option, index) => (
                         <div>
-                          <label htmlFor={field.name} id="field">
-                            {field.label}
-                          </label>
                           <input
-                            type={field.type}
-                            id={"field"}
-                            name={field.name}
-                            value={values[`${field.name}`]}
+                            type="radio"
+                            id={option.id}
+                            name={option.name}
+                            value={values[`${option.id}`]}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            placeholder={widget.placeholder}
-                            className={
-                              errors[`${field.name}`] &&
-                              touched[`${field.name}`] &&
-                              "error"
-                            }
-                            min="0"
                           />
+                          <label
+                            for="male"
+                            style={{ display: "inline-block " }}
+                          >
+                            {option.label}
+                          </label>
                         </div>
                       ))}
                     </div>
-                  ) : (
+                  ) : widget.type === "Submit" ? (
                     <div class="button">
                       <button
                         id={widget.type}
@@ -245,6 +266,17 @@ class Widgets extends Component {
                         disabled={isSubmitting}
                       >
                         {widget.type}
+                      </button>
+                    </div>
+                  ) : (
+                    <div class="button">
+                      <button
+                        id={widget.type}
+                        type={widget.type}
+                        disabled={isSubmitting}
+                        onClick={() => console.log("redirecting to new page ")}
+                      >
+                        {widget.label}
                       </button>
                     </div>
                   )

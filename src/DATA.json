@@ -21,6 +21,165 @@
       ]
     },
     "timelinedata": [],
-    "pagetitle": "REACT APP"
+    "pagetitle": "REACT APP",
+    "widgetdata": [
+      {
+        "category": "input",
+        "type": "text",
+        "label": "Request Title",
+        "name": "req-title",
+        "placeholder": "Enter the request title",
+        "id": "req-title",
+        "layout": "3col"
+      },
+
+      {
+        "category": "input",
+        "type": "text",
+        "label": "Requestor Phone",
+        "name": "phnumber",
+        "placeholder": "Ente your phone number",
+        "id": "phnumber",
+        "layout": "2col"
+      },
+
+      {
+        "category": "input",
+        "type": "text",
+        "label": "Demand/SEACAT ID",
+        "name": "demandid",
+        "placeholder": "Enter the Demand/SEACAT ID",
+        "id": "demandid"
+      },
+      {
+        "category": "fieldset",
+        "id": "req-details",
+        "name": "req-details",
+        "label": "Requestor details",
+        "fields": [
+          {
+            "category": "input",
+            "type": "text",
+            "label": "Name",
+            "name": "req-name",
+            "placeholder": "",
+            "id": "req-name"
+          },
+          {
+            "category": "input",
+            "type": "text",
+            "label": "Title",
+            "name": "req-title",
+            "placeholder": "",
+            "id": "req-title"
+          },
+          {
+            "category": "input",
+            "type": "text",
+            "label": "SESA",
+            "name": "req-sesa",
+            "placeholder": "",
+            "id": "req-sesa"
+          },
+          {
+            "category": "input",
+            "type": "text",
+            "label": "Mail",
+            "name": "req-email",
+            "placeholder": "",
+            "id": "req-email"
+          }
+        ]
+      },
+      {
+        "category": "fieldset",
+        "id": "prj-sponsor-details",
+        "name": "prj-sponsor-details",
+        "label": "Project Sponsor",
+        "fields": [
+          {
+            "category": "input",
+            "type": "text",
+            "label": "Name",
+            "name": "prj-sponsor-name",
+            "placeholder": "",
+            "id": "prj-sponsor-name"
+          },
+          {
+            "category": "input",
+            "type": "text",
+            "label": "Title",
+            "name": "prj-sponsor-title",
+            "placeholder": "",
+            "id": "prj-sponsor-title"
+          },
+          {
+            "category": "input",
+            "type": "text",
+            "label": "SESA",
+            "name": "prj-sponsor-sesa",
+            "placeholder": "",
+            "id": "prj-sponsor-sesa"
+          },
+          {
+            "category": "input",
+            "type": "text",
+            "label": "Mail",
+            "name": "prj-sponsor-email",
+            "placeholder": "",
+            "id": "prj-sponsor-email"
+          }
+        ]
+      },
+      {
+        "category": "fieldset",
+        "id": "prj-drl-details",
+        "name": "prj-drl-details",
+        "label": "Project DRL",
+        "fields": [
+          {
+            "category": "input",
+            "type": "text",
+            "label": "Name",
+            "name": "prj-drl-name",
+            "placeholder": "",
+            "id": "prj-drl-name"
+          },
+          {
+            "category": "input",
+            "type": "text",
+            "label": "Title",
+            "name": "prj-drl-title",
+            "placeholder": "",
+            "id": "prj-drl-title"
+          },
+          {
+            "category": "input",
+            "type": "text",
+            "label": "SESA",
+            "name": "prj-drl-sesa",
+            "placeholder": "",
+            "id": "prj-drl-sesa"
+          },
+          {
+            "category": "input",
+            "type": "text",
+            "label": "Mail",
+            "name": "prj-drl-email",
+            "placeholder": "",
+            "id": "prj-drl-email"
+          }
+        ]
+      },
+      {
+        "category": "select",
+        "options": [1, 2, 3],
+        "name": "test",
+        "label": "test me"
+      },
+      { "category": "textarea", "label": "test" },
+
+      { "category": "button", "type": "Submit" }
+    ]
   }
 }

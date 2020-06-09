@@ -4,6 +4,7 @@ import * as Data from "./DATA.json"; // JSON data for the UI pages
 import Navbar from "./page-layout-elements/navbar"; //module for the side navigation bar
 import "./page-layout-elements/pagelayout.css"; //css file for the page layout
 import VerticalTimeline from "./special-components/verticaltimeline";
+import Widgets from "./UI-components/widgets";
 // import "bootstrap/dist/css/bootstrap.css";  //install bootstrap and uncomment to start using bootstrap
 
 //import the required modules from the directory
@@ -15,6 +16,7 @@ class PageTemplate extends Component {
   constructor(props) {
     super(props);
     this.toggleclass = this.toggleclass.bind(this);
+    this.handleChange = this.handleChange.bind(this);
 
     this.state = {
       title: Data.templatepage.title, //set the title of the section
@@ -27,6 +29,8 @@ class PageTemplate extends Component {
         { title: "step3", date: "03-01-1998", status: "not-started" },
         { title: "step4", date: "04-01-1998", status: "not-started" },
       ],
+      file: null,
+      widgetdata: Data.templatepage.widgetdata,
       //set the state if any additional component is imported and pass the data to the child component
     };
   }
@@ -63,6 +67,11 @@ class PageTemplate extends Component {
     }); */
   }
 
+  handleChange(event) {
+    this.setState({
+      file: URL.createObjectURL(event.target.files[0]),
+    });
+  }
   render() {
     return (
       <Fragment>
@@ -81,16 +90,22 @@ class PageTemplate extends Component {
           <div className="activearea">
             <div className="data">
               {/* your code goes here..*/}
-              <h1>Hello from React</h1>
-              <div
-                style={{
-                  width: "200px",
-                  backgroundColor: "#cdcdcd",
-                  borderRadius: "4px",
-                }}
-              >
-                <VerticalTimeline timelineData={this.state.timelineData} />
-              </div>
+
+              {/* <div style={{ display: "grid", gridTemplateColumns: "20% 80%" }}>
+                <h1 style={{ backgroundColor: "blue" }}>Hello from React</h1>
+                <div
+                  style={{
+                    backgroundColor: "#cdcdcd",
+                    borderRadius: "4px",
+                    display: "inline-block",
+                  }}
+                >
+                  <VerticalTimeline timelineData={this.state.timelineData} />
+                </div>
+              </div> */}
+              <Widgets widgetdata={this.state.widgetdata} />
+              <br />
+              <br />
             </div>
           </div>
         </div>
