@@ -35,7 +35,7 @@ class Navbar extends Component {
               onClick={this.props.ontoggle}
               style={{
                 float: "right",
-                fontSize: 28,
+                fontSize: 20,
                 color: "white",
               }}
             ></i>

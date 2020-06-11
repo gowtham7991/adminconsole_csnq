@@ -5,6 +5,7 @@ import Navbar from "./page-layout-elements/navbar"; //module for the side naviga
 import "./page-layout-elements/pagelayout.css"; //css file for the page layout
 import VerticalTimeline from "./special-components/verticaltimeline";
 import Widgets from "./UI-components/widgets";
+import ExcelReader from "./special-components/excelToJSON/excel-json-converter";
 // import "bootstrap/dist/css/bootstrap.css";  //install bootstrap and uncomment to start using bootstrap
 
 //import the required modules from the directory
@@ -16,21 +17,14 @@ class PageTemplate extends Component {
   constructor(props) {
     super(props);
     this.toggleclass = this.toggleclass.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleClose = this.handleClose.bind(this);
 
     this.state = {
       title: Data.templatepage.title, //set the title of the section
       active: false, //states the status of the toggle for the navigation bar
       navdetails: Data.templatepage.navdetails.URL, //set the details for the navigation bar from the JSON
       pagetitle: Data.templatepage.pagetitle, //set the page title
-      timelineData: [
-        { title: "step1", date: "01-01-1998", status: "completed" },
-        { title: "step2", date: "02-01-1998", status: "completed" },
-        { title: "step3", date: "03-01-1998", status: "not-started" },
-        { title: "step4", date: "04-01-1998", status: "not-started" },
-      ],
-      file: null,
-      widgetdata: Data.templatepage.widgetdata,
+      isHidden: true,
       //set the state if any additional component is imported and pass the data to the child component
     };
   }
@@ -67,11 +61,11 @@ class PageTemplate extends Component {
     }); */
   }
 
-  handleChange(event) {
-    this.setState({
-      file: URL.createObjectURL(event.target.files[0]),
-    });
+  //handles modal form close button -- updates parent state
+  handleClose(val) {
+    this.setState({ isHidden: val });
   }
+
   render() {
     return (
       <Fragment>
@@ -91,21 +85,15 @@ class PageTemplate extends Component {
             <div className="data">
               {/* your code goes here..*/}
 
-              {/* <div style={{ display: "grid", gridTemplateColumns: "20% 80%" }}>
-                <h1 style={{ backgroundColor: "blue" }}>Hello from React</h1>
-                <div
-                  style={{
-                    backgroundColor: "#cdcdcd",
-                    borderRadius: "4px",
-                    display: "inline-block",
-                  }}
-                >
-                  <VerticalTimeline timelineData={this.state.timelineData} />
-                </div>
-              </div> */}
-              <Widgets widgetdata={this.state.widgetdata} />
-              <br />
-              <br />
+              {/*triggers data masking pop-up -- replace with the required input*/}
+              <button onClick={() => this.setState({ isHidden: false })}>
+                Open converter
+              </button>
+              {/*opens when button is clicked -- isHidden in excelreader is set to false*/}
+              <ExcelReader
+                isHidden={this.state.isHidden}
+                handleClose={this.handleClose}
+              />
             </div>
           </div>
         </div>

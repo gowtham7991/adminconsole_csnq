@@ -4,7 +4,7 @@
 }
 
 .navigation #menushrink-active {
-  width: 50px;
+  width: 40px;
   height: 100vh;
   background-color: #3dcd58;
   position: fixed;
@@ -15,7 +15,6 @@
   justify-items: center;
   justify-content: center;
   color: white;
-  font-size: 25px;
   left: 13px;
   width: 20px;
   top: 20px;
