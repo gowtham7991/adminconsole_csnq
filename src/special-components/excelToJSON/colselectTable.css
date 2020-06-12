@@ -38,7 +38,7 @@
     background-color: #3694f8
 }
 
-.submit {
+.btn-colselect {
     width: 150px;
     background-color: #5A6268;
     border-radius: 4px;
@@ -50,8 +50,26 @@
     cursor: pointer;
 }
 
-.submit:hover {
+.btn-colselect:hover {
     background-color: #808488;
+}
+
+.submit {
+    width: 150px;
+    background-color: #3cde65;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.submit:hover {
+    background-color: #4dce6d;
 }
 
 * {

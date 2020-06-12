@@ -83,7 +83,7 @@ class ExcelReader extends Component {
       isColChecked: isColCheckedCurr,
       selectedCols: selectedCols,
     });
-    console.log("==event==", selectedCols);
+    console.log("==ok==");
   }
 
   //is used to set parent isHidden state to true
@@ -94,7 +94,6 @@ class ExcelReader extends Component {
   }
 
   render() {
-    console.log("==colcheck", this.state.isColChecked);
     return (
       <div>
         <div className={this.state.isHidden ? "alert-box-hidden" : "alert-box"}>
@@ -120,7 +119,7 @@ class ExcelReader extends Component {
               accept={SheetJSFT}
               onChange={this.handleChange}
             />
-            <label onClick={this.handleFile} className="submit">
+            <label onClick={this.handleFile} className="btn-colselect">
               Choose Columns
             </label>
             <h6>File:{this.state.selectedFile}</h6>
@@ -155,6 +154,17 @@ class ExcelReader extends Component {
             )}
 
             {/* add a submit func to work with selectcols array -- view selected cols in console log */}
+            <button
+              className="submit"
+              onClick={() =>
+                console.log(
+                  "choosen cols in the table are ",
+                  this.state.selectedCols
+                )
+              }
+            >
+              submit
+            </button>
           </div>
         </div>
       </div>
