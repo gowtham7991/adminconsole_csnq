@@ -5,12 +5,12 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 20px;
+  padding: 10px;
 }
 
 .widgets .widget {
   width: 33.33%;
-  padding: 10px 30px;
+  padding: 5px 15px;
 }
 
 .widgets .widget_2col {
@@ -25,9 +25,10 @@
 
 .widgets .textarea {
   width: 100%;
-  padding: 10px 30px;
+  padding: 5px 15px;
   margin-right: 200px;
 }
+
 .widgets .checkbox {
   width: 100%;
   padding: 10px 30px;
@@ -58,12 +59,12 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 0px;
+  margin: 30px;
 }
 
 label {
-  margin: 8px 0px;
-  margin-left: 8px;
+  margin-bottom: 0px;
+  margin-left: 5px;
   display: block;
   font-size: 18px;
   box-sizing: border-box;
@@ -80,8 +81,8 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  width: 90%;
-  height: 55px;
+  width: 85%;
+  height: 40px;
 }
 
 input[type="text"] {
@@ -92,8 +93,8 @@ input[type="text"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  width: 100%;
-  height: 55px;
+  width: 85%;
+  height: 40px;
 }
 
 label#field {
@@ -106,8 +107,9 @@ input[type="text"]#field {
   margin: 8px 0px;
   margin-left: 5px;
   height: 30px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0px;
   display: inline-block;
   width: 67%;
 }
@@ -140,8 +142,8 @@ input[type="number"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  width: 100%;
-  height: 55px;
+  width: 85%;
+  height: 40px;
 }
 
 input[type="date"]::-webkit-inner-spin-button {
@@ -153,20 +155,18 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 input[type="date"] {
-  background: #fff
-    url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)
-    97% 50% no-repeat;
+  background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
 
   background-color: #fff;
   padding: 3px 3px;
-  margin: 8px 0px;
+
   margin-left: 5px;
   display: block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  width: 100%;
-  height: 55px;
+  width: 85%;
+  height: 40px;
 }
 
 input[type="checkbox"] {
@@ -191,8 +191,8 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  width: 100%;
-  height: 55px;
+  width: 85%;
+  height: 40px;
 }
 
 input[type="submit"]:hover {

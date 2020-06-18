@@ -21,7 +21,7 @@ class VerticalTimeline extends Component {
           {this.state.timelineData.map((item, index) => (
             <div class="timeline-container">
               <div key={index} class={item.status}></div>
-              <h4>{item.title}</h4>
+              <h7>{item.title}</h7>
               <h7>{item.date}</h7>
             </div>
           ))}

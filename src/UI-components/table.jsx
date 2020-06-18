@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import "./table.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 class Table extends Component {
   constructor(props) {
@@ -64,6 +65,7 @@ class Table extends Component {
                           ) : Object.keys(rowdata["value"])[0] == "URL" ? (
                             <a
                               href={rowdata["value"]["URL"]["_href"]}
+                              style={{ textDecoration: "none" }}
                               onClick={() =>
                                 this.props.changeTable(
                                   rowdata["value"]["URL"]["_href"]
@@ -88,6 +90,29 @@ class Table extends Component {
                           id={index3}
                         >
                           {/* <Widgets widgetdata={rowdata["value"]} /> */}
+                        </td>
+                      ) : rowdata["type"] == "status" ? (
+                        <td
+                          rowSpan={rowdata["rowspan"]}
+                          key={index3}
+                          id={index3}
+                        >
+                          <span
+                            class={`badge badge-pill badge-${
+                              rowdata["value"] === "Pending"
+                                ? "warning"
+                                : rowdata["value"] === "Accepted"
+                                ? "success"
+                                : "danger"
+                            }`}
+                            style={{
+                              padding: "8px",
+                              width: "80px",
+                              color: "white",
+                            }}
+                          >
+                            {rowdata["value"]}
+                          </span>
                         </td>
                       ) : (
                         <td

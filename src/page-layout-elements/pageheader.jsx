@@ -16,7 +16,7 @@ class Pageheader extends Component {
     return (
       <Fragment>
         <div className="pageheader">
-          <h4>{this.state.pagetitle}</h4>
+          <h6>{this.state.pagetitle}</h6>
           <a href="#help">help/report issues</a>
 
           <h3 id="title">{this.state.title}</h3>

@@ -1,6 +1,7 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
+
 .main0 {
   margin-left: 60px;
   padding-right: 0px;
@@ -25,31 +26,38 @@
   right: 0px;
   left: 0px;
 }
+
 .activearea {
   position: absolute;
-  margin-top: 79px;
+  margin-top: 72px;
   left: 0px;
   width: 100%;
   display: flex;
   align-items: space-around;
 }
+
 .data {
   width: 100%;
+  /* background-color: #f8f8f8; */
+  /* height: calc(100vh - 76px); */
 }
 
 .data p {
   font-size: 14px;
 }
+
 .data #buttons {
   display: flex;
   justify-content: center;
   margin-left: 200px;
   margin-right: 200px;
 }
+
 .data #risksubmit {
   display: flex;
   justify-content: center;
 }
+
 .timeline {
   width: 20%;
 }
@@ -83,9 +91,11 @@
   margin: 0px;
   padding: 0px;
 }
+
 .denied .content h5 {
   font-size: 20px;
 }
+
 .loading-container {
   display: flex;
   justify-content: center;
@@ -94,9 +104,12 @@
   height: calc(100vh - 80px);
   position: relative;
 }
+
 .loading-container .loader {
-  border: 12px solid lightgray; /* Light grey */
-  border-top: 12px solid #3dcd58; /* Blue */
+  border: 12px solid lightgray;
+  /* Light grey */
+  border-top: 12px solid #3dcd58;
+  /* Blue */
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -117,10 +130,12 @@
   text-align: center;
   margin-top: 50px;
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }

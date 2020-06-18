@@ -37,7 +37,7 @@ class Widgets extends Component {
             (option, index) => (keys[`${option.name}`] = false)
           )
         : widget.category == "select"
-        ? (keys[`${widget.name}`] = widget.options[0])
+        ? (keys[`${widget.name}`] = widget["options"][0])
         : widget.category == "fieldset"
         ? widget.fields.map((field, index) => (keys[`${field.name}`] = ""))
         : (keys[`${widget.name}`] = "")
@@ -114,7 +114,9 @@ class Widgets extends Component {
                         id={widget.id}
                         name={widget.name}
                         value={values[`${widget.name}`]}
-                        onChange={handleChange}
+                        onChange={(e) => {
+                          handleChange(e);
+                        }}
                         onBlur={handleBlur}
                       >
                         {widget.options.map((option, index1) => (

@@ -3,17 +3,21 @@
   padding: 0px;
   box-sizing: border-box;
 }
+
 .timeline-area {
   border-left: 2px solid black;
   margin-left: 10px;
   margin: 15px;
+
 }
+
 .timeline-area .timeline-container {
   margin-bottom: 20px;
   padding: 5px 5px;
   position: relative;
   margin-left: 10px;
 }
+
 .completed::before {
   content: "";
   display: block;
@@ -21,11 +25,12 @@
   height: 14px;
   background-color: #3dcd58;
   position: absolute;
-  left: -21px;
+  left: -19px;
   top: 15px;
   border-radius: 50%;
   border: 3px solid #3dcd58;
 }
+
 .pending::before {
   content: "";
   display: block;
@@ -33,11 +38,12 @@
   height: 14px;
   background-color: white;
   position: absolute;
-  left: -21px;
+  left: -19px;
   top: 15px;
   border-radius: 50%;
   border: 3px solid salmon;
 }
+
 .not-started::before {
   content: "";
   display: block;
@@ -45,7 +51,7 @@
   height: 14px;
   background-color: white;
   position: absolute;
-  left: -21px;
+  left: -19px;
   top: 15px;
   border-radius: 50%;
   border: 3px solid #6395c6;

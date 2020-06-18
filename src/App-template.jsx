@@ -18,6 +18,7 @@ class PageTemplate extends Component {
     super(props);
     this.toggleclass = this.toggleclass.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
 
     this.state = {
       title: Data.templatepage.title, //set the title of the section
@@ -25,6 +26,33 @@ class PageTemplate extends Component {
       navdetails: Data.templatepage.navdetails.URL, //set the details for the navigation bar from the JSON
       pagetitle: Data.templatepage.pagetitle, //set the page title
       isHidden: true,
+      widgetdata: [
+        {
+          category: "input",
+          type: "text",
+          label: "Please select a text :",
+          name: "input1",
+          id: 1,
+          placeholder: "enter text",
+        },
+        {
+          category: "select",
+          type: "select",
+          label: "Please select a number :",
+          name: "select1",
+          id: 1,
+          options: [1, 2, 3],
+        },
+        {
+          category: "select",
+          type: "select",
+          label: "Please select a number :",
+          name: "select2",
+          id: 2,
+          options: ["a", "b"],
+        },
+        { category: "button", type: "Submit" },
+      ],
       //set the state if any additional component is imported and pass the data to the child component
     };
   }
@@ -65,7 +93,13 @@ class PageTemplate extends Component {
   handleClose(val) {
     this.setState({ isHidden: val });
   }
-
+  handleSelect(event) {
+    var selectedValue = event.target.value;
+    console.log("selected value", selectedValue);
+    var widgetdata = this.state.widgetdata;
+    widgetdata[2]["options"] = [1, 2, 3, 4, 5, 6];
+    this.setState({ widgetdata: widgetdata });
+  }
   render() {
     return (
       <Fragment>
@@ -84,16 +118,7 @@ class PageTemplate extends Component {
           <div className="activearea">
             <div className="data">
               {/* your code goes here..*/}
-
-              {/*triggers data masking pop-up -- replace with the required input*/}
-              <button onClick={() => this.setState({ isHidden: false })}>
-                Open converter
-              </button>
-              {/*opens when button is clicked -- isHidden in excelreader is set to false*/}
-              <ExcelReader
-                isHidden={this.state.isHidden}
-                handleClose={this.handleClose}
-              />
+              <h7>your code goes here...</h7>
             </div>
           </div>
         </div>
