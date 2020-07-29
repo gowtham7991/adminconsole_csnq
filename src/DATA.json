@@ -1,6 +1,6 @@
 {
   "templatepage": {
-    "title": "Test Title",
+    "title": "Admin Console",
     "navdetails": {
       "URL": [
         {
@@ -21,7 +21,7 @@
       ]
     },
     "timelinedata": [],
-    "pagetitle": "REACT APP",
+    "pagetitle": "",
     "widgetdata": [
       {
         "category": "input",

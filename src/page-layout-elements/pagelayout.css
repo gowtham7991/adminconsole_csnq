@@ -38,8 +38,7 @@
 
 .data {
   width: 100%;
-  /* background-color: #f8f8f8; */
-  /* height: calc(100vh - 76px); */
+  background-color: #f8f8f8;
 }
 
 .data p {
@@ -64,7 +63,6 @@
 
 .denied {
   width: 100%;
-  background-color: #f2f2f2;
   height: calc(100vh);
   /* background-image: url(""); */
   /* background-repeat: no-repeat; */
