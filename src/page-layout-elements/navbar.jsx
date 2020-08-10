@@ -27,7 +27,11 @@ class Navbar extends Component {
               rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
             />
-            <i class="fa fa-bars" onClick={this.props.ontoggle}></i>
+            <i
+              class="fa fa-bars"
+              onClick={this.props.ontoggle}
+              style={{ cursor: "pointer" }}
+            ></i>
           </div>
           <div id={this.props.active ? "menu-active" : "menu-inactive"}>
             <i
@@ -37,6 +41,7 @@ class Navbar extends Component {
                 float: "right",
                 fontSize: 20,
                 color: "white",
+                cursor: "pointer",
               }}
             ></i>
             <div
@@ -50,19 +55,25 @@ class Navbar extends Component {
                 height: "90%",
               }}
             >
-              {this.state.navdetails.map((url, index) => (
-                <a
-                  id={url["_type"]}
-                  href={url["_href"]}
-                  style={{
-                    color: "white",
-
-                    fontSize: "20px",
-                  }}
-                >
-                  {url["__text"]}
-                </a>
-              ))}
+              {this.state.navdetails.map((url, index) =>
+                url["_type"] === "home" || url["_type"] === "footer" ? (
+                  <a
+                    id={url["_type"]}
+                    href={url["_href"]}
+                    target="_blank"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.reload();
+                    }}
+                  >
+                    {url["__text"]}
+                  </a>
+                ) : (
+                  <a id={url["_type"]} href={url["_href"]} target="_blank">
+                    {url["__text"]}
+                  </a>
+                )
+              )}
             </div>
           </div>
         </div>

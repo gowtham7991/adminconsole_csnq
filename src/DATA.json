@@ -1,6 +1,6 @@
 {
   "templatepage": {
-    "title": "Admin Console",
+    "title": "User Access Management",
     "navdetails": {
       "URL": [
         {
@@ -8,11 +8,7 @@
           "_href": "home.html",
           "__text": "Home"
         },
-        {
-          "_type": "link",
-          "_href": "link1.html",
-          "__text": "link"
-        },
+
         {
           "_type": "footer",
           "_href": "help.html",
@@ -191,11 +187,7 @@
           "_href": "home.html",
           "__text": "Home"
         },
-        {
-          "_type": "link",
-          "_href": "link1.html",
-          "__text": "link"
-        },
+
         {
           "_type": "footer",
           "_href": "help.html",
@@ -411,11 +403,6 @@
           "_type": "home",
           "_href": "home.html",
           "__text": "Home"
-        },
-        {
-          "_type": "link",
-          "_href": "link1.html",
-          "__text": "link"
         },
         {
           "_type": "footer",

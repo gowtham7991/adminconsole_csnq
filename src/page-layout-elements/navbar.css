@@ -15,6 +15,7 @@
   justify-items: center;
   justify-content: center;
   color: white;
+  font-size: 14px;
   left: 13px;
   width: 20px;
   top: 20px;
@@ -31,7 +32,6 @@
   justify-items: center;
   justify-content: center;
   color: white;
-  font-size: 25px;
   left: 13px;
   width: 20px;
   top: 20px;
@@ -51,16 +51,22 @@
 .navigation #menu-active #home {
   top: 30px;
   position: absolute;
+  font-size: 16px;
+  color: white;
 }
 
 .navigation #menu-active #footer {
   position: absolute;
   bottom: 30px;
+  font-size: 16px;
+  color: white;
 }
 
 .navigation #menu-active #link {
   position: absolute;
   top: 70px;
+  font-size: 16px;
+  color: white;
 }
 
 .navigation #menu-inactive {

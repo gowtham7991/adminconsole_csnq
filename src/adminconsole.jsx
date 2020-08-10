@@ -82,8 +82,9 @@ export default function MaterialTableDemo(props) {
       }
     )
       .then((res) => res.json())
-      .then((result) => console.log(result.message));
-    window.location.reload();
+      .then((result) =>
+        result.status === "success" ? window.location.reload() : ""
+      );
   }
   return (
     <div style={{ marginTop: "10px" }}>

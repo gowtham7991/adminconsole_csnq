@@ -54,38 +54,37 @@ class PageTemplate extends Component {
       }
     )
       .then((res) => res.json())
-      .then((result) => {
-        this.setState({ isAuthorized: result.status });
-      })
       .then(
-        fetch(
-          "https://7iyn0l5sr3-vpce-06e2f74570634aea4.execute-api.eu-west-1.amazonaws.com/dev/adminconsole",
-          {
-            method: "POST",
-            headers: { "Content-type": "application/json" },
-            body: JSON.stringify({
-              request: {
-                requestDate: "2020-04-01 13:02:02",
-                requestType: "retrive",
-                requestAction: "getData",
-              },
-            }),
-          }
+        (result) => (
+          result.status === "success"
+            ? fetch(
+                "https://7iyn0l5sr3-vpce-06e2f74570634aea4.execute-api.eu-west-1.amazonaws.com/dev/adminconsole",
+                {
+                  method: "POST",
+                  headers: { "Content-type": "application/json" },
+                  body: JSON.stringify({
+                    request: {
+                      requestDate: "2020-04-01 13:02:02",
+                      requestType: "retrive",
+                      requestAction: "getData",
+                    },
+                  }),
+                }
+              )
+                .then((res) => res.json())
+                .then((result) =>
+                  this.setState({
+                    columns: result.message.message.columns,
+                    data: result.message.message.data,
+                  })
+                )
+            : "",
+          this.setState({ isAuthorized: result.status, isLoaded: true })
         )
-          .then((res) => res.json())
-          .then((result) =>
-            this.setState({
-              columns: result.message.message.columns,
-              data: result.message.message.data,
-              isLoaded: true,
-              isAuthorized: result.status,
-            })
-          )
       );
   }
 
   render() {
-    console.log("--isauth--", this.state.isAuthorized);
     return (
       <Fragment>
         <Navbar
